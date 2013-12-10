@@ -44,6 +44,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -126,9 +128,31 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AdventurousContactsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\Datamodels\AdventurousContactsModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdventurousContactsModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Datamodels\AdventurousContactsModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdventurousContactsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Datamodels\AdventurousContactsModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdventurousContactsModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Datamodels\Contact.cs">
+      <DependentUpon>AdventurousContactsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Repository\IRepository.cs" />
+    <Compile Include="Models\Repository\Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -188,6 +212,23 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <EntityDeploy Include="Models\Datamodels\AdventurousContactsModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AdventurousContactsModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Datamodels\AdventurousContactsModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AdventurousContactsModel.edmx</DependentUpon>
+      <LastGenOutput>AdventurousContactsModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Datamodels\AdventurousContactsModel.edmx.diagram">
+      <DependentUpon>AdventurousContactsModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Datamodels\AdventurousContactsModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AdventurousContactsModel.edmx</DependentUpon>
+      <LastGenOutput>AdventurousContactsModel.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -215,14 +256,18 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\AdventurousContacts\Index.cshtml" />
+    <Content Include="Views\AdventurousContacts\Create.cshtml" />
+    <Content Include="Views\AdventurousContacts\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

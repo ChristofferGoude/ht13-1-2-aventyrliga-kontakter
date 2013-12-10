@@ -9,6 +9,9 @@ header, footer, nav, section {
     display: block;
 }
 
+h1, h1, h3, h4 {
+    font-family:Calibri;
+}
 
 /* Styles for basic forms
 -----------------------------------------------------------*/
