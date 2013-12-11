@@ -7,7 +7,7 @@ using AdventurousContacts.Models.Datamodels;
 
 namespace AdventurousContacts.Models.Repository
 {
-    interface IRepository : IDisposable
+    public interface IRepository : IDisposable
     {
         void Add(Contact contact);
         void DeleteContact(int contactId);

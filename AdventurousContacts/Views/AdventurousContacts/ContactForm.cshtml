@@ -1,0 +1,35 @@
+﻿@model AdventurousContacts.Models.Contact
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "Ett fel uppstod! Åtgärda felet och försök igen!")
+    @Html.HiddenFor(model => model.ContactID)
+
+    <div>
+        @Html.LabelFor(model => model.FirstName):
+    </div>
+    <div>
+        @Html.EditorFor(model => model.FirstName, new { maxLength = "50", size = "50" })
+        @Html.ValidationMessageFor(model => model.FirstName)
+    </div>
+
+    <div>
+        @Html.LabelFor(model => model.LastName):
+    </div>
+    <div>
+        @Html.EditorFor(model => model.LastName, new { maxLength = "50", size = "50" })
+        @Html.ValidationMessageFor(model => model.LastName)
+    </div>    
+    <div>
+        @Html.LabelFor(model => model.EmailAddress):
+    </div>
+    <div>
+        @Html.EditorFor(model => model.EmailAddress, new { maxLength = "50", size = "50" })
+        @Html.ValidationMessageFor(model => model.EmailAddress)
+    </div>
+
+    <p>
+        <input type="submit" value="Skicka" />
+    </p>
+}

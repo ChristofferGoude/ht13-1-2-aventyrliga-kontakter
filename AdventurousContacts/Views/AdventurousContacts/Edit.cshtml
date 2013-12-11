@@ -1,0 +1,21 @@
+﻿@model AdventurousContacts.Models.Contact
+
+@{
+    ViewBag.Title = "Uppdatera kontakt";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if(Model != null)
+{
+    <h2>Uppdatera kontakt</h2>
+    <p><b>Förnamn:</b> @Model.FirstName</p>
+    <p><b>Efternamn:</b> @Model.LastName</p>
+    <p><b>Mailadress:</b> @Model.EmailAddress</p>
+
+    @Html.Partial("ContactForm")
+    @Html.Partial("Return")
+}
+else
+{
+    @Html.Partial("NotFound")  
+}

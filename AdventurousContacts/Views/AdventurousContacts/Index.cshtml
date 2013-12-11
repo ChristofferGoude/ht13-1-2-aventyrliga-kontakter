@@ -1,10 +1,38 @@
-﻿@model AdventurousContacts.Models.Contacts
+﻿@model IEnumerable<AdventurousContacts.Models.Contact>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Uppgift 2: Äventyrliga Kontakter";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Kontaktlista</h2>
 
 @Html.ActionLink("Lägg till kontakt", "Create")
+
+@if (Model != null)
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Förnamn</th>
+                <th>Efternamn</th>
+                <th>Emailaddress</th>
+                <th>Åtgärd</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var contact in Model)
+        {
+            var id = new { id = contact.ContactID };
+            
+            <tr>
+                <td>@Html.DisplayFor(c => contact.FirstName)</td>
+                <td>@Html.DisplayFor(c => contact.LastName)</td>
+                <td>@Html.DisplayFor(c => contact.EmailAddress)</td>
+                <td>@Html.ActionLink("Edit", "Edit", id)
+                    @Html.ActionLink("Delete", "Delete", id)</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

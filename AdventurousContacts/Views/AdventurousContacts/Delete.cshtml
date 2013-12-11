@@ -1,8 +1,27 @@
 ﻿@model AdventurousContacts.Models.Contact
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Ta bort kontakt";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Ta bort kontakt</h2>
+@if(Model != null)
+{
+    <h2>Ta bort kontakt</h2>
+    <p><b>Är du säker på att du vill ta bort följande kontakt?</b></p>
+    <p><b>Förnamn:</b> @Model.FirstName</p>
+    <p><b>Efternamn:</b> @Model.LastName</p>
+    <p><b>Mailadress:</b> @Model.EmailAddress</p>
+    
+    using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <input type="submit" value="Ja" />  
+    
+        @Html.Partial("Return") 
+    }
+}
+else
+{
+    @Html.Partial("NotFound")
+}

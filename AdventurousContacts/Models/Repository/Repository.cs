@@ -1,6 +1,7 @@
 ﻿using AdventurousContacts.Models.Datamodels;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 
@@ -42,7 +43,7 @@ namespace AdventurousContacts.Models.Repository
 
         public void Update(Contact contact)
         {
-            //TODO: Functionality    
+            _entities.Entry(contact).State = EntityState.Modified;  
         }
 
         public void Save()

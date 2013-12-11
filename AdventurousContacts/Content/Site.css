@@ -13,6 +13,54 @@ h1, h1, h3, h4 {
     font-family:Calibri;
 }
 
+table {
+    border-collapse:collapse;
+    border:1px solid #232323;
+}
+
+thead {
+    background-color:#232323;
+    color:#ddd;
+}
+
+th, td {
+    width:100px;
+    text-align:center;
+    vertical-align:middle;
+}
+
+th {
+    height:30px;
+}
+
+tr:nth-of-type(even){ 
+    background-color:#ffee6a; 
+}
+
+input {
+    height:25px;
+    border:solid 1px;
+    border-radius:2px;
+}
+
+input[type="text"] {
+    width:150px;
+}
+
+input[type="submit"] {
+    width:125px;
+}
+
+input[type="submit"]:hover {
+    background-color:#ffee6a;
+}
+
+/* Own classes and IDs*/
+.wrapper {
+    width:402px;
+    margin:0 auto 0 auto;
+}
+
 /* Styles for basic forms
 -----------------------------------------------------------*/
 fieldset {

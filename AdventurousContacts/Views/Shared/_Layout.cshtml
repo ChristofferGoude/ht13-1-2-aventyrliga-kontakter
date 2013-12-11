@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/site.css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <h1>
-        Adventurous Contacts
-    </h1>
-    @RenderBody()
+    <div class="wrapper">
+        <h1>Adventurous Contacts</h1>
+        @RenderBody()
 
-    @Scripts.Render("~/bundles/jquery")
-    @RenderSection("scripts", required: false)
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </div>
 </body>
 </html>
