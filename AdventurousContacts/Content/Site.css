@@ -38,6 +38,7 @@ tr:nth-of-type(even){
 }
 
 input {
+    display:block;
     height:25px;
     border:solid 1px;
     border-radius:2px;
@@ -48,6 +49,7 @@ input[type="text"] {
 }
 
 input[type="submit"] {
+    background-color:#e6e6e6;
     width:125px;
 }
 
@@ -59,6 +61,23 @@ input[type="submit"]:hover {
 .wrapper {
     width:402px;
     margin:0 auto 0 auto;
+}
+
+a.link {
+    display:block;
+    background-color:#e6e6e6;
+    text-decoration:none;
+    text-align:center;
+    padding:2px 0 0 0;
+    margin:0 0 10px 0;
+    height:22px;
+    width:122px;
+    border:solid 1px;
+    border-radius:2px;
+}
+
+.link:hover {
+    background-color:#ffee6a;
 }
 
 /* Styles for basic forms

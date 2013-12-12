@@ -29,7 +29,6 @@ namespace AdventurousContacts.Models.Repository
                 .Take(count).ToList();
         }
 
-
         public void Add(Contact contact)
         {
             _entities.Contacts.Add(contact);
@@ -56,7 +55,6 @@ namespace AdventurousContacts.Models.Repository
             Dispose(true);
             GC.SuppressFinalize(this);
         }
-
 
         public void Dispose(bool disposing)
         {

@@ -52,13 +52,17 @@ namespace AdventurousContacts.Controllers
 
                     return View("Success");
                 }
-                catch(Exception e)
+                catch (Exception)
                 {
-                    string error = "Ett fel inträffade vid skapandet av kontakt Meddelande: " + e.Message;
+                    string error = "Ett fel inträffade vid skapandet av kontakt Meddelande: "; // +e.Message;
                     ModelState.AddModelError(String.Empty, error);
                 }
             }
-            return View("Create");
+            else
+            {
+                return View("Create", contact);
+            }
+            return View("Index", _repository.GetLastContacts());
         }
 
         // GET: /AdventurousContacts/
@@ -74,21 +78,21 @@ namespace AdventurousContacts.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteFinished(Contact contact)
+        public ActionResult DeleteFinished(int id = 0)
         {
             try
             {
-                _repository.DeleteContact(contact.ContactID);
+                _repository.DeleteContact(id);
                 _repository.Save();
 
                 return View("Success");
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                string error = "Ett fel inträffade vid borttagningen av kontakt! Meddelande: " + e.Message;
-                ModelState.AddModelError(String.Empty, error);
+                ModelState.AddModelError(String.Empty, "Ett fel inträffade vid borttagningen av kontakt!");
             }
-            return View("Delete", contact.ContactID);
+            
+            return View("Index", _repository.GetLastContacts());
         }
 
         // GET: /AdventurousContacts/
@@ -115,13 +119,16 @@ namespace AdventurousContacts.Controllers
 
                     return View("Success");
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
-                    string error = "Ett fel inträffade vid uppdateringen! Meddelande: " + e.Message;
-                    ModelState.AddModelError(String.Empty, error);
+                    ModelState.AddModelError(String.Empty, "Ett fel inträffade vid uppdateringen!");
                 }
             }
-            return View("Edit", contact.ContactID);
+            else
+            {
+                return View("Edit", contact);
+            }
+            return View("Index", _repository.GetLastContacts());
         }
     }
 }

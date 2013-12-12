@@ -10,15 +10,6 @@ namespace AdventurousContacts.Models
     [MetadataType(typeof(Contact_MetaData))]
     public partial class Contact
     {
-        public Contact()
-        {
-        }
-        public Contact(string firstName, string lastName, string emailAdress)
-        {
-            FirstName = firstName;
-            LastName = lastName;
-            EmailAddress = emailAdress;
-        }
     }
 
     public class Contact_MetaData

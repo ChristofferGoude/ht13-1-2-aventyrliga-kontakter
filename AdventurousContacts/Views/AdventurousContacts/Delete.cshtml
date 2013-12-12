@@ -16,10 +16,11 @@
     using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
-        <input type="submit" value="Ja" />  
-    
-        @Html.Partial("Return") 
+        <p>
+            <input type="submit" value="Ja" />  
+        </p>
     }
+    @Html.Partial("Return") 
 }
 else
 {
