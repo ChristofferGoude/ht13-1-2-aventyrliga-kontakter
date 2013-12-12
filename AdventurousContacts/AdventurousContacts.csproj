@@ -264,7 +264,7 @@
     <Content Include="Views\AdventurousContacts\ContactForm.cshtml" />
     <Content Include="Views\Error\Error.cshtml" />
     <Content Include="Views\AdventurousContacts\Edit.cshtml" />
-    <Content Include="Views\AdventurousContacts\Return.cshtml" />
+    <Content Include="Views\Shared\Return.cshtml" />
     <Content Include="Views\AdventurousContacts\NotFound.cshtml" />
     <Content Include="Views\Error\Error404.cshtml" />
     <Content Include="Views\AdventurousContacts\Success.cshtml" />

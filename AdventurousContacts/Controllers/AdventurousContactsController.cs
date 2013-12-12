@@ -50,7 +50,7 @@ namespace AdventurousContacts.Controllers
                     _repository.Add(contact);
                     _repository.Save();
 
-                    return View("Success");
+                    return RedirectToAction("Success");
                 }
                 catch (Exception)
                 {
@@ -85,7 +85,7 @@ namespace AdventurousContacts.Controllers
                 _repository.DeleteContact(id);
                 _repository.Save();
 
-                return View("Success");
+                return RedirectToAction("Success");
             }
             catch (Exception)
             {
@@ -117,7 +117,7 @@ namespace AdventurousContacts.Controllers
                     _repository.Update(contact);
                     _repository.Save();
 
-                    return View("Success");
+                    return RedirectToAction("Success");
                 }
                 catch (Exception)
                 {
@@ -129,6 +129,13 @@ namespace AdventurousContacts.Controllers
                 return View("Edit", contact);
             }
             return View("Index", _repository.GetLastContacts());
+        }
+
+        // GET
+
+        public ActionResult Success()
+        {
+            return View("Success");
         }
     }
 }
